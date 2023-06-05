@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		CC78A5892A2E38EF00140A3F /* KinematicsCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A5882A2E38EF00140A3F /* KinematicsCalculatorApp.swift */; };
-		CC78A58B2A2E38EF00140A3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A58A2A2E38EF00140A3F /* ContentView.swift */; };
 		CC78A58D2A2E38F200140A3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78A58C2A2E38F200140A3F /* Assets.xcassets */; };
 		CC78A5902A2E38F200140A3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78A58F2A2E38F200140A3F /* Preview Assets.xcassets */; };
 		CC78A5982A2E39A300140A3F /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CC78A5972A2E39A300140A3F /* LaTeXSwiftUI */; };
 		CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */; };
+		CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A59D2A2E52E500140A3F /* Answer.swift */; };
+		CC78A5A12A2E531C00140A3F /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = CC78A5A02A2E531C00140A3F /* Blackbird */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC78A5852A2E38EF00140A3F /* KinematicsCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KinematicsCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC78A5882A2E38EF00140A3F /* KinematicsCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinematicsCalculatorApp.swift; sourceTree = "<group>"; };
-		CC78A58A2A2E38EF00140A3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC78A58C2A2E38F200140A3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC78A58F2A2E38F200140A3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationCalculatorView.swift; sourceTree = "<group>"; };
+		CC78A59D2A2E52E500140A3F /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +31,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC78A5982A2E39A300140A3F /* LaTeXSwiftUI in Frameworks */,
+				CC78A5A12A2E531C00140A3F /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				CC78A59C2A2E3C8000140A3F /* Models */,
+				CC78A5A22A2E545C00140A3F /* Helpers */,
 				CC78A5882A2E38EF00140A3F /* KinematicsCalculatorApp.swift */,
-				CC78A58A2A2E38EF00140A3F /* ContentView.swift */,
 				CC78A5992A2E3C1B00140A3F /* Views */,
 				CC78A58C2A2E38F200140A3F /* Assets.xcassets */,
 				CC78A58E2A2E38F200140A3F /* Preview Content */,
@@ -84,8 +86,16 @@
 		CC78A59C2A2E3C8000140A3F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CC78A59D2A2E52E500140A3F /* Answer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CC78A5A22A2E545C00140A3F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +116,7 @@
 			name = KinematicsCalculator;
 			packageProductDependencies = (
 				CC78A5972A2E39A300140A3F /* LaTeXSwiftUI */,
+				CC78A5A02A2E531C00140A3F /* Blackbird */,
 			);
 			productName = KinematicsCalculator;
 			productReference = CC78A5852A2E38EF00140A3F /* KinematicsCalculator.app */;
@@ -137,6 +148,7 @@
 			mainGroup = CC78A57C2A2E38EF00140A3F;
 			packageReferences = (
 				CC78A5962A2E39A200140A3F /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
+				CC78A59F2A2E531C00140A3F /* XCRemoteSwiftPackageReference "Blackbird" */,
 			);
 			productRefGroup = CC78A5862A2E38EF00140A3F /* Products */;
 			projectDirPath = "";
@@ -164,8 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */,
 				CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */,
-				CC78A58B2A2E38EF00140A3F /* ContentView.swift in Sources */,
 				CC78A5892A2E38EF00140A3F /* KinematicsCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +389,14 @@
 				kind = branch;
 			};
 		};
+		CC78A59F2A2E531C00140A3F /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -384,6 +404,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC78A5962A2E39A200140A3F /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
 			productName = LaTeXSwiftUI;
+		};
+		CC78A5A02A2E531C00140A3F /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC78A59F2A2E531C00140A3F /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

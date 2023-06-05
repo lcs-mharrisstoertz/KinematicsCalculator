@@ -5,6 +5,7 @@
 //  Created by Morgan Harris-Stoertz on 2023-06-05.
 //
 
+import Blackbird
 import SwiftUI
 import LaTeXSwiftUI
 
@@ -67,13 +68,23 @@ struct AccelerationCalculatorView: View {
                 
               //Shows answer
                 
-                HStack{
+                Group{
                     LaTeX("$$Acceleration:\(acceleration.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
                         .bold()
                         .font(.title2)
                         .padding()
+                }
+                
+                //History
+                
+                Group{
+                    Text("History")
+                        .font(.title)
+                        .bold()
                     
-                    
+                    List{
+                        
+                    }
                 }
                 
                 
