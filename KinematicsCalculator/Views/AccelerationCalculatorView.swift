@@ -18,7 +18,8 @@ struct AccelerationCalculatorView: View {
     var body: some View {
         
         VStack{
-            LaTeX("Pythagorean Theorem: $$a^2 + b^2 = c^2$$")
+            
+            LaTeX("$$V^2=V^20+2a∆x$$")
         }
         .navigationTitle("Acceleration")
     }
