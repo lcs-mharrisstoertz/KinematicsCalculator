@@ -18,9 +18,11 @@ struct AccelerationCalculatorView: View {
     var body: some View {
         
         VStack{
-            
-            LaTeX("$$V^2=V^20+2a∆x$$")
+                LaTeX("$$V^2=V^20+2a∆x$$")
+                .font(.title)
+                .bold()
         }
+        
         .navigationTitle("Acceleration")
     }
 }
