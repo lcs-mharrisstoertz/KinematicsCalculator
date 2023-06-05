@@ -11,6 +11,7 @@
 		CC78A58B2A2E38EF00140A3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A58A2A2E38EF00140A3F /* ContentView.swift */; };
 		CC78A58D2A2E38F200140A3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78A58C2A2E38F200140A3F /* Assets.xcassets */; };
 		CC78A5902A2E38F200140A3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC78A58F2A2E38F200140A3F /* Preview Assets.xcassets */; };
+		CC78A5982A2E39A300140A3F /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CC78A5972A2E39A300140A3F /* LaTeXSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC78A5982A2E39A300140A3F /* LaTeXSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = KinematicsCalculator;
+			packageProductDependencies = (
+				CC78A5972A2E39A300140A3F /* LaTeXSwiftUI */,
+			);
 			productName = KinematicsCalculator;
 			productReference = CC78A5852A2E38EF00140A3F /* KinematicsCalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = CC78A57C2A2E38EF00140A3F;
+			packageReferences = (
+				CC78A5962A2E39A200140A3F /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
+			);
 			productRefGroup = CC78A5862A2E38EF00140A3F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC78A5962A2E39A200140A3F /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/colinc86/LaTeXSwiftUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC78A5972A2E39A300140A3F /* LaTeXSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC78A5962A2E39A200140A3F /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
+			productName = LaTeXSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC78A57D2A2E38EF00140A3F /* Project object */;
 }
