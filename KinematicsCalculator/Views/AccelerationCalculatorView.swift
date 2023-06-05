@@ -16,14 +16,27 @@ struct AccelerationCalculatorView: View {
     @State var distance = 0.0
     
     var body: some View {
-        
-        VStack{
+        NavigationView{
+            VStack{
                 LaTeX("$$V^2=V^20+2a∆x$$")
-                .font(.title)
-                .bold()
+                    .font(.title)
+                    .bold()
+                
+                LaTeX("$$\(finalVelocity)^2=\(initialVelocity)^2+2a(\(distance))$$")
+                    .font(.title)
+                    .bold()
+                
+                
+                Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                
+                Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                
+                Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                
+            }
+            .navigationTitle("Acceleration")
         }
-        
-        .navigationTitle("Acceleration")
+
     }
 }
 
