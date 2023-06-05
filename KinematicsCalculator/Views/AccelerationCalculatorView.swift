@@ -15,6 +15,11 @@ struct AccelerationCalculatorView: View {
     @State var finalVelocity = 0.0
     @State var distance = 0.0
     
+    //MARK: computed properties
+    var acceleration: Double{
+        ((finalVelocity - initialVelocity)/(distance)) * 0.5
+    }
+    
     var initialVelocityString: String {
         if initialVelocity == 0.0 {
             return "V"
@@ -59,6 +64,8 @@ struct AccelerationCalculatorView: View {
                     
                     Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                 }
+                
+                
                 
                
                 
