@@ -30,14 +30,40 @@ struct AccelerationCalculatorView: View {
                     .font(.title)
                     .bold()
                 
+                    .padding()
                 
-                Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                //initial velocity slider
+                Group{
+                    Text("Initial Velocity ")
+                        .font(.title3)
+                        .bold()
+
+                    Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                }
+               
+                //final velocity slider
                 
-                Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                Group{
+                    Text("Final Velocity")
+                        .font(.title3)
+                        .bold()
+                    
+                    Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                }
+              //distance slider
                 
-                Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                Group{
+                    Text("Distance")
+                        .font(.title3)
+                        .bold()
+                    
+                    Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                }
+                
+               
                 
             }
+            .padding()
             .navigationTitle("Acceleration")
         }
 
