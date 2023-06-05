@@ -39,7 +39,7 @@ struct AccelerationCalculatorView: View {
                 
                 //initial velocity slider
                 Group{
-                    Text("Initial Velocity ")
+                    Text("Initial Velocity (m/s)")
                         .font(.title3)
                         .bold()
 
@@ -49,7 +49,7 @@ struct AccelerationCalculatorView: View {
                 //final velocity slider
                 
                 Group{
-                    Text("Final Velocity")
+                    Text("Final Velocity (m/s)")
                         .font(.title3)
                         .bold()
                     
@@ -58,16 +58,27 @@ struct AccelerationCalculatorView: View {
               //distance slider
                 
                 Group{
-                    Text("Distance")
+                    Text("Distance (m)")
                         .font(.title3)
                         .bold()
                     
                     Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                 }
                 
+              //Shows answer
+                
+                HStack{
+                    LaTeX("$$Acceleration:\(acceleration.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
+                        .bold()
+                        .font(.title2)
+                        .padding()
+                    
+                    
+                }
                 
                 
-               
+
+               Spacer()
                 
             }
             .padding()
