@@ -83,13 +83,15 @@ struct AccelerationCalculatorView: View {
                     Task{
                         //write to the data base
                         try await db!.transaction { core in
-                            try core.query("INSERT INTO Answer (answer) VALUES (?)",answer)
+                            try core.query("INSERT INTO Answer (answer) VALUES (?)", answer)
                         }
                     }
                 }, label: {
                     Text("ADD")
                         .font(.caption)
                 })
+                .tint(.green)
+                .buttonStyle(.borderedProminent)
                 
                 //History
                 

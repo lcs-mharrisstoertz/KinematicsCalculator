@@ -16,6 +16,7 @@
 		CC78A5A12A2E531C00140A3F /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = CC78A5A02A2E531C00140A3F /* Blackbird */; };
 		CC78A5A42A2F9D0B00140A3F /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A5A32A2F9D0A00140A3F /* AppDatabase.swift */; };
 		CCA7313B2A2FB16B00956812 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CCA7313A2A2FB16B00956812 /* db.sqlite */; };
+		CCA7313F2A2FBBE300956812 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7313E2A2FBBE300956812 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CC78A59D2A2E52E500140A3F /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		CC78A5A32A2F9D0A00140A3F /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		CCA7313A2A2FB16B00956812 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		CCA7313E2A2FBBE300956812 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */,
+				CCA7313E2A2FBBE300956812 /* HistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */,
 				CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */,
+				CCA7313F2A2FBBE300956812 /* HistoryView.swift in Sources */,
 				CC78A5A42A2F9D0B00140A3F /* AppDatabase.swift in Sources */,
 				CC78A5892A2E38EF00140A3F /* KinematicsCalculatorApp.swift in Sources */,
 			);
