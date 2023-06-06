@@ -12,8 +12,7 @@ import LaTeXSwiftUI
 struct AccelerationCalculatorView: View {
     //MARK: stored properties
     //input from user
-    @Environment(\.blackbirdDatabase) var db:
-    Blackbird.Database?
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     
     @State var initialVelocity = 0.0
     @State var finalVelocity = 0.0
@@ -21,7 +20,7 @@ struct AccelerationCalculatorView: View {
     
     
     //MARK: computed properties
-    var acceleration: Double{
+    var answer: Double{
         ((finalVelocity - initialVelocity)/(distance)) * 0.5
     }
     
@@ -73,7 +72,7 @@ struct AccelerationCalculatorView: View {
               //Shows answer
                 
                 Group{
-                    LaTeX("$$Acceleration:\(acceleration.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
+                    LaTeX("$$Acceleration:\(answer.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
                         .bold()
                         .font(.title2)
                         .padding()
@@ -84,7 +83,7 @@ struct AccelerationCalculatorView: View {
                     Task{
                         //write to the data base
                         try await db!.transaction { core in
-                            try core.query("INSERT INTO Answer (description) VALUES (?)", answer)
+                            try core.query("INSERT INTO Answer (answer) VALUES (?)",answer)
                         }
                     }
                 }, label: {
