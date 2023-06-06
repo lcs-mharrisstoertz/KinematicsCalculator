@@ -14,6 +14,7 @@
 		CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */; };
 		CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A59D2A2E52E500140A3F /* Answer.swift */; };
 		CC78A5A12A2E531C00140A3F /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = CC78A5A02A2E531C00140A3F /* Blackbird */; };
+		CC78A5A42A2F9D0B00140A3F /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78A5A32A2F9D0A00140A3F /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		CC78A58F2A2E38F200140A3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationCalculatorView.swift; sourceTree = "<group>"; };
 		CC78A59D2A2E52E500140A3F /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		CC78A5A32A2F9D0A00140A3F /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		CC78A5A52A2FA10600140A3F /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,9 @@
 		CC78A5872A2E38EF00140A3F /* KinematicsCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				CC78A5882A2E38EF00140A3F /* KinematicsCalculatorApp.swift */,
 				CC78A59C2A2E3C8000140A3F /* Models */,
 				CC78A5A22A2E545C00140A3F /* Helpers */,
-				CC78A5882A2E38EF00140A3F /* KinematicsCalculatorApp.swift */,
 				CC78A5992A2E3C1B00140A3F /* Views */,
 				CC78A58C2A2E38F200140A3F /* Assets.xcassets */,
 				CC78A58E2A2E38F200140A3F /* Preview Content */,
@@ -87,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CC78A59D2A2E52E500140A3F /* Answer.swift */,
+				CC78A5A52A2FA10600140A3F /* db.sqlite */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,6 +98,7 @@
 		CC78A5A22A2E545C00140A3F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CC78A5A32A2F9D0A00140A3F /* AppDatabase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			files = (
 				CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */,
 				CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */,
+				CC78A5A42A2F9D0B00140A3F /* AppDatabase.swift in Sources */,
 				CC78A5892A2E38EF00140A3F /* KinematicsCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

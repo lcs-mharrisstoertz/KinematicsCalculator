@@ -12,6 +12,7 @@ struct KinematicsCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
             AccelerationCalculatorView()
+                .environment(\.blackbirdDatabase, AppDatabase.instance)
         }
     }
 }

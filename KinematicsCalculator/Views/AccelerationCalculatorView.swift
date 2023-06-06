@@ -12,9 +12,13 @@ import LaTeXSwiftUI
 struct AccelerationCalculatorView: View {
     //MARK: stored properties
     //input from user
+    @Environment(\.blackbirdDatabase) var db:
+    Blackbird.Database?
+    
     @State var initialVelocity = 0.0
     @State var finalVelocity = 0.0
     @State var distance = 0.0
+    
     
     //MARK: computed properties
     var acceleration: Double{
@@ -75,6 +79,19 @@ struct AccelerationCalculatorView: View {
                         .padding()
                 }
                 
+                //Button to save work
+                Button(action: {
+                    Task{
+                        //write to the data base
+                        try await db!.transaction { core in
+                            try core.query("INSERT INTO Answer (description) VALUES (?)", answer)
+                        }
+                    }
+                }, label: {
+                    Text("ADD")
+                        .font(.caption)
+                })
+                
                 //History
                 
                 Group{
@@ -102,5 +119,7 @@ struct AccelerationCalculatorView: View {
 struct AccelerationCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         AccelerationCalculatorView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
+
     }
 }
