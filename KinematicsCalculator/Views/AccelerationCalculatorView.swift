@@ -72,7 +72,8 @@ struct AccelerationCalculatorView: View {
               //Shows answer
                 
                 Group{
-                    LaTeX("$$Acceleration:\(answer.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
+                    LaTeX("Acceleration:$$\(answer.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
+                        .blockMode(.alwaysInline)
                         .bold()
                         .font(.title2)
                         .padding()
