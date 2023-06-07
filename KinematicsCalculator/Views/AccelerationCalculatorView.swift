@@ -49,11 +49,29 @@ struct AccelerationCalculatorView: View {
     
 
     //answer
-    
-    
-    var answer: Double{
-        ((finalVelocity - initialVelocity)/(distance)) * 0.5
+    //make initialVelocity usable
+    var formattedAccelerationValue: String{
+        guard let initalVelocityToCalculateWith = initialVelocityAsOptionalDouble else{
+            return "Please enter a numeric value"
+        }
+
+        //make finalVelocity usable
+            guard let finalVelocityToCalculateWith = finalVelocityAsOptionalDouble else{
+                return "Please enter a numeric value"
+            }
+        
+        //make distance usable
+            guard let distanceToCalculateWith = distanceAsOptionalDouble else{
+                return "Please enter a numeric value"
+            }
+        //CALCUALTE ANSWER
+        let acceleration = ((finalVelocityToCalculateWith - initalVelocityToCalculateWith)/(distanceToCalculateWith)) * 0.5
+        
+        //return formatted answer
+        return acceleration.formatted(.number.precision(.fractionLength(1)))
+        
     }
+
     
     var initialVelocityString: String {
         if initialVelocity == 0.0 {
