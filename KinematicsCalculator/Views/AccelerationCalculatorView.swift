@@ -68,6 +68,10 @@ struct AccelerationCalculatorView: View {
                    
 
                     Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                    
+                    TextField("Enter a number...", text: $initialVelocity)
+                        .font(.largeTitle)
+                        .padding()
                 }
                
                 //final velocity slider
@@ -82,6 +86,10 @@ struct AccelerationCalculatorView: View {
                    
                     
                     Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                    
+                    TextField("Enter a number...", text: $finalVelocity)
+                        .font(.largeTitle)
+                        .padding()
                 }
               //distance slider
                 
@@ -95,6 +103,10 @@ struct AccelerationCalculatorView: View {
                     }
                     
                     Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
+                    
+                    TextField("Enter a number...", text: $distance)
+                        .font(.largeTitle)
+                        .padding()
                 }
                 
               //Shows answer
