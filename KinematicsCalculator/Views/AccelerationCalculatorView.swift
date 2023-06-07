@@ -74,7 +74,7 @@ struct AccelerationCalculatorView: View {
 
     
     var initialVelocityString: String {
-        if initialVelocity == 0.0 {
+        if initialVelocity == "" {
             return "V"
         } else {
             return "\(initialVelocity)"
@@ -82,7 +82,7 @@ struct AccelerationCalculatorView: View {
     }
     
     var finalVelocityString: String {
-        if finalVelocity == 0.0 {
+        if finalVelocity == "" {
             return "V0"
         } else {
             return "\(finalVelocity)"
@@ -90,7 +90,7 @@ struct AccelerationCalculatorView: View {
     }
     
     var distanceString: String {
-        if distance == 0.0 {
+        if distance == "" {
             return "Δx"
         } else {
             return "\(distance)"
@@ -106,53 +106,42 @@ struct AccelerationCalculatorView: View {
                 
                     .padding()
                 
-                //initial velocity slider
+                //initial velocity text field
                 Group{
                     HStack{
                         Text("Initial Velocity (m/s)")
                             .font(.title3)
-                            .bold()
-                        Text("\(initialVelocity.formatted(.number.precision(.significantDigits(4))))")
                     }
-                   
-
-                    Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                     
                     TextField("Enter a number...", text: $initialVelocity)
                         .font(.largeTitle)
                         .padding()
                 }
                
-                //final velocity slider
+                //final velocity text field
                 
                 Group{
                     HStack{
                         Text("Final Velocity (m/s)")
                             .font(.title3)
                             .bold()
-                        Text("\(finalVelocity.formatted(.number.precision(.significantDigits(4))))")
+
                     }
-                   
-                    
-                    Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                     
                     TextField("Enter a number...", text: $finalVelocity)
                         .font(.largeTitle)
                         .padding()
                 }
-              //distance slider
+              //distance text field
                 
                 Group{
                     HStack{
                         Text("Distance (m)")
                             .font(.title3)
                             .bold()
-                        Text("\(distance.formatted(.number.precision(.significantDigits(4))))")
                         
                     }
-                    
-                    Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
-                    
+
                     TextField("Enter a number...", text: $distance)
                         .font(.largeTitle)
                         .padding()
@@ -161,11 +150,14 @@ struct AccelerationCalculatorView: View {
               //Shows answer
                 
                 Group{
-                    LaTeX("Acceleration:$$\(answer.formatted(.number.precision(.significantDigits(4))))m/s^2$$")
-                        .blockMode(.alwaysInline)
-                        .bold()
-                        .font(.title2)
-                        .padding()
+                    HStack{
+                        Text("Acceleration:")
+                            .font(.title2)
+                            .bold()
+                        LaTeX("\(formattedAccelerationValue) $$m/s^2$$")
+                            .blockMode(.alwaysInline)
+                            .font(.title3)
+                    }
                 }
                 
                 //Button to save work
@@ -173,7 +165,7 @@ struct AccelerationCalculatorView: View {
                     Task{
                         //write to the data base
                         try await db!.transaction { core in
-                            try core.query("INSERT INTO Answer (answer) VALUES (?)", answer)
+                            try core.query("INSERT INTO Answer (answer) VALUES (?)", formattedAccelerationValue)
                         }
                     }
                 }, label: {
