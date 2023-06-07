@@ -14,12 +14,43 @@ struct AccelerationCalculatorView: View {
     //input from user
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     
-    @State var initialVelocity = 0.0
-    @State var finalVelocity = 0.0
-    @State var distance = 0.0
+    @State var initialVelocity = ""
+    @State var finalVelocity = ""
+    @State var distance = ""
     
     
     //MARK: computed properties
+    //convert initial velocity given into an optional double
+    var initialVelocityAsOptionalDouble: Double?{
+        
+        guard let initialVelocityGivenAsDouble = Double(initialVelocity) else {
+            return nil
+        }
+        return initialVelocityGivenAsDouble
+    }
+    
+    //convert final velocity given into an optional double
+    var finalVelocityAsOptionalDouble: Double?{
+        
+        guard let finalVelocityGivenAsDouble = Double(finalVelocity) else {
+            return nil
+        }
+        return finalVelocityGivenAsDouble
+    }
+    
+    //convert distance given into an optional double
+    var distanceAsOptionalDouble: Double?{
+        
+        guard let distanceGivenAsDouble = Double(distance) else {
+            return nil
+        }
+        return distanceGivenAsDouble
+    }
+    
+
+    //answer
+    
+    
     var answer: Double{
         ((finalVelocity - initialVelocity)/(distance)) * 0.5
     }
