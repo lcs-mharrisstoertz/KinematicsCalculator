@@ -8,7 +8,7 @@
 import Blackbird
 import SwiftUI
 
-struct FavouritesView: View {
+struct HistoryView: View {
     
     //MARK: stored properties
     @BlackbirdLiveModels({ db in
@@ -43,7 +43,7 @@ struct FavouritesView: View {
 
 struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouritesView()
+        HistoryView()
             .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }

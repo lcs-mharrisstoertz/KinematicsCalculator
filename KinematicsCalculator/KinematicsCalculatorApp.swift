@@ -16,7 +16,7 @@ struct KinematicsCalculatorApp: App {
                     .tabItem{
                         Label("Calculator", systemImage: "circle.grid.3x3")
                     }
-                FavouritesView()
+                HistoryView()
                     .tabItem{
                         Label("History", systemImage: "list.star")
                     }
