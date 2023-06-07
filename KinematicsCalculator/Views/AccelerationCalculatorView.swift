@@ -62,9 +62,13 @@ struct AccelerationCalculatorView: View {
               //distance slider
                 
                 Group{
-                    Text("Distance (m)")
-                        .font(.title3)
-                        .bold()
+                    HStack{
+                        Text("Distance (m)")
+                            .font(.title3)
+                            .bold()
+                        Text("\(distance)")
+                        
+                    }
                     
                     Slider(value: $distance, in: 0...100, step: 1.0, label: { Text("distance")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                 }
@@ -88,24 +92,12 @@ struct AccelerationCalculatorView: View {
                         }
                     }
                 }, label: {
-                    Text("ADD")
-                        .font(.caption)
+                    Text("Save to History")
+                        .font(.title2)
+                        .bold()
                 })
                 .tint(.green)
                 .buttonStyle(.borderedProminent)
-                
-                //History
-                
-                Group{
-                    Text("History")
-                        .font(.title)
-                        .bold()
-                    
-                    List{
-                        
-                    }
-                }
-                
                 
 
                Spacer()
