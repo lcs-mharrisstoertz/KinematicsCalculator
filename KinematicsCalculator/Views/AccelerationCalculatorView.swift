@@ -59,9 +59,13 @@ struct AccelerationCalculatorView: View {
                 
                 //initial velocity slider
                 Group{
-                    Text("Initial Velocity (m/s)")
-                        .font(.title3)
-                        .bold()
+                    HStack{
+                        Text("Initial Velocity (m/s)")
+                            .font(.title3)
+                            .bold()
+                        Text("\(initialVelocity.formatted(.number.precision(.significantDigits(4))))")
+                    }
+                   
 
                     Slider(value: $initialVelocity, in: 0...100, step: 1.0, label: { Text("Initial Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                 }
@@ -69,9 +73,13 @@ struct AccelerationCalculatorView: View {
                 //final velocity slider
                 
                 Group{
-                    Text("Final Velocity (m/s)")
-                        .font(.title3)
-                        .bold()
+                    HStack{
+                        Text("Final Velocity (m/s)")
+                            .font(.title3)
+                            .bold()
+                        Text("\(finalVelocity.formatted(.number.precision(.significantDigits(4))))")
+                    }
+                   
                     
                     Slider(value: $finalVelocity, in: 0...100, step: 1.0,  label: { Text("Final Velocity")}, minimumValueLabel: {Text("0")}, maximumValueLabel: {Text("100")})
                 }
@@ -82,7 +90,7 @@ struct AccelerationCalculatorView: View {
                         Text("Distance (m)")
                             .font(.title3)
                             .bold()
-                        Text("\(distance)")
+                        Text("\(distance.formatted(.number.precision(.significantDigits(4))))")
                         
                     }
                     
@@ -92,7 +100,7 @@ struct AccelerationCalculatorView: View {
               //Shows answer
                 
                 Group{
-                    LaTeX("Acceleration:$$\(answer.formatted(.number.precision(.significantDigits(3))))m/s^2$$")
+                    LaTeX("Acceleration:$$\(answer.formatted(.number.precision(.significantDigits(4))))m/s^2$$")
                         .blockMode(.alwaysInline)
                         .bold()
                         .font(.title2)
