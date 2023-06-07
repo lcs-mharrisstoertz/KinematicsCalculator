@@ -110,12 +110,15 @@ struct AccelerationCalculatorView: View {
                 Group{
                     HStack{
                         Text("Initial Velocity (m/s)")
-                            .font(.title3)
+                            .font(.title2)
+                            .bold()
+                        Spacer()
                     }
                     
                     TextField("Enter a number...", text: $initialVelocity)
-                        .font(.largeTitle)
-                        .padding()
+                        .font(.title2)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                      
                 }
                
                 //final velocity text field
@@ -123,29 +126,34 @@ struct AccelerationCalculatorView: View {
                 Group{
                     HStack{
                         Text("Final Velocity (m/s)")
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
+                        Spacer()
 
                     }
                     
                     TextField("Enter a number...", text: $finalVelocity)
-                        .font(.largeTitle)
-                        .padding()
+                        .font(.title2)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
                 }
               //distance text field
                 
                 Group{
                     HStack{
                         Text("Distance (m)")
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
+                        Spacer()
                         
                     }
 
                     TextField("Enter a number...", text: $distance)
-                        .font(.largeTitle)
-                        .padding()
+                        .font(.title2)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
+               Spacer()
                 
               //Shows answer
                 
@@ -180,6 +188,7 @@ struct AccelerationCalculatorView: View {
                Spacer()
                 
             }
+            .padding()
             .padding()
             .navigationTitle("Acceleration")
         }
