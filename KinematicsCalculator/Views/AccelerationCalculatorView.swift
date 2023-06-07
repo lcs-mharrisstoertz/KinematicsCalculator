@@ -32,10 +32,26 @@ struct AccelerationCalculatorView: View {
         }
     }
     
+    var finalVelocityString: String {
+        if finalVelocity == 0.0 {
+            return "V0"
+        } else {
+            return "\(finalVelocity)"
+        }
+    }
+    
+    var distanceString: String {
+        if distance == 0.0 {
+            return "Δx"
+        } else {
+            return "\(distance)"
+        }
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
-                LaTeX("$$\(finalVelocity)^2=\(initialVelocityString)^2+2a(\(distance))$$")
+                LaTeX("$$\(finalVelocityString)^2=\(initialVelocityString)^2+2a(\(distanceString))$$")
                     .font(.title)
                     .bold()
                 
