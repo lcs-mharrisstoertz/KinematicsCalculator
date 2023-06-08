@@ -13,22 +13,22 @@ struct UnknownPropertyListView: View {
             NavigationLink(destination: {
                 AccelerationCalculatorView()
             }, label: {
-                TitleSymbolView(title: "Distance", symbol: "Δx")
+                TitleSymbolView(title: "Distance", symbol: "$$Δx$$")
             })
             NavigationLink(destination: {
                 AccelerationCalculatorView()
             }, label: {
-                TitleSymbolView(title: "Initial Velocity", symbol: "V0")
+                TitleSymbolView(title: "Initial Velocity", symbol: "$$V0$$")
             })
             NavigationLink(destination: {
                 AccelerationCalculatorView()
             }, label: {
-                TitleSymbolView(title: "Final Velocity", symbol: "V")
+                TitleSymbolView(title: "Final Velocity", symbol: "$$V$$")
             })
             NavigationLink(destination: {
                 AccelerationCalculatorView()
             }, label: {
-                TitleSymbolView(title: "Time", symbol: "t")
+                TitleSymbolView(title: "Time", symbol: "$$t$$")
             })
             
         }

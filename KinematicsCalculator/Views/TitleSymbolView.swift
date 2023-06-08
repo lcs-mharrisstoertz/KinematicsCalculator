@@ -5,6 +5,7 @@
 //  Created by Morgan Harris-Stoertz on 2023-06-07.
 //
 
+import LaTeXSwiftUI
 import SwiftUI
 
 struct TitleSymbolView: View {
@@ -24,9 +25,11 @@ struct TitleSymbolView: View {
                 .font(.title)
                 .bold()
             
-            Text(symbol)
+            LaTeX(symbol)
+                .blockMode(.alwaysInline)
                 .font(.title)
                 .italic()
+            
         }
     }
 }

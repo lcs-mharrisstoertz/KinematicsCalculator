@@ -98,115 +98,115 @@ struct AccelerationCalculatorView: View {
     }
     
     var body: some View {
-        NavigationView{
-            VStack{
-                LaTeX("$$\(finalVelocityString)^2=\(initialVelocityString)^2+2a(\(distanceString))$$")
-                    .font(.title)
-                    .bold()
-                
-                    .padding()
-                
-                //initial velocity text field
-                Group{
-                    HStack{
-                        Text("Initial Velocity (m/s)")
-                            .font(.title2)
-                            .bold()
-                        Spacer()
-                    }
-                    
-                    TextField("Enter a number...", text: $initialVelocity)
-                        .font(.title2)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                      
-                }
-               
-                //final velocity text field
-                
-                Group{
-                    HStack{
-                        Text("Final Velocity (m/s)")
-                            .font(.title2)
-                            .bold()
-                        Spacer()
-
-                    }
-                    
-                    TextField("Enter a number...", text: $finalVelocity)
-                        .font(.title2)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                }
-              //distance text field
-                
-                Group{
-                    HStack{
-                        Text("Distance (m)")
-                            .font(.title2)
-                            .bold()
-                        Spacer()
-                        
-                    }
-
-                    TextField("Enter a number...", text: $distance)
-                        .font(.title2)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-               Spacer()
-                
-              //Shows answer
-                
-                Group{
-                    HStack{
-                        Text("Acceleration:")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                        LaTeX("\(formattedAccelerationValue) $$m/s^2$$")
-                            .blockMode(.alwaysInline)
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(.white)
-                    }
-                    .padding()
-                    .background(Color.blue)
-                }
-                
-                Spacer()
-                
-                //Button to save work
-                Button(action: {
-                    Task{
-                        //write to the data base
-                        try await db!.transaction { core in
-                            try core.query("INSERT INTO Answer (answer) VALUES (?)", formattedAccelerationValue)
-                        }
-                    }
-                }, label: {
-                    Text("Save to History")
+        VStack{
+            LaTeX("$$\(finalVelocityString)^2=\(initialVelocityString)^2+2a(\(distanceString))$$")
+                .font(.title)
+                .bold()
+            
+                .padding()
+            
+            //initial velocity text field
+            Group{
+                HStack{
+                    Text("Initial Velocity (m/s)")
                         .font(.title2)
                         .bold()
-                })
-                .tint(.green)
-                .buttonStyle(.borderedProminent)
+                    Spacer()
+                }
                 
+                TextField("Enter a number...", text: $initialVelocity)
+                    .font(.title2)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                  
+            }
+           
+            //final velocity text field
+            
+            Group{
+                HStack{
+                    Text("Final Velocity (m/s)")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
 
-               Spacer()
+                }
+                
+                TextField("Enter a number...", text: $finalVelocity)
+                    .font(.title2)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
             }
+          //distance text field
             
-            .padding()
-            .navigationTitle("Acceleration")
+            Group{
+                HStack{
+                    Text("Distance (m)")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                    
+                }
+
+                TextField("Enter a number...", text: $distance)
+                    .font(.title2)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            
+           Spacer()
+            
+          //Shows answer
+            
+            Group{
+                HStack{
+                    Text("Acceleration:")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                    LaTeX("\(formattedAccelerationValue) $$m/s^2$$")
+                        .blockMode(.alwaysInline)
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .padding()
+                .background(Color.blue)
+            }
+            
+            Spacer()
+            
+            //Button to save work
+            Button(action: {
+                Task{
+                    //write to the data base
+                    try await db!.transaction { core in
+                        try core.query("INSERT INTO Answer (answer) VALUES (?)", formattedAccelerationValue)
+                    }
+                }
+            }, label: {
+                Text("Save to History")
+                    .font(.title2)
+                    .bold()
+            })
+            .tint(.green)
+            .buttonStyle(.borderedProminent)
+            
+
+           Spacer()
+            
         }
+        
+        .padding()
+        .navigationTitle("Acceleration")
 
     }
 }
 
 struct AccelerationCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        AccelerationCalculatorView()
-            .environment(\.blackbirdDatabase, AppDatabase.instance)
+        NavigationView{
+            AccelerationCalculatorView()
+                .environment(\.blackbirdDatabase, AppDatabase.instance)
+        }
 
     }
 }
