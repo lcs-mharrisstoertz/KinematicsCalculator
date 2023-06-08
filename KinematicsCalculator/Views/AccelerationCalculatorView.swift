@@ -65,10 +65,10 @@ struct AccelerationCalculatorView: View {
                 return "Please enter a numeric value"
             }
         //CALCUALTE ANSWER
-        let acceleration = ((finalVelocityToCalculateWith - initalVelocityToCalculateWith)/(distanceToCalculateWith)) * 0.5
+        let acceleration = ((finalVelocityToCalculateWith - initalVelocityToCalculateWith)/(distanceToCalculateWith * 2))
         
         //return formatted answer
-        return acceleration.formatted(.number.precision(.fractionLength(1)))
+        return acceleration.formatted(.number.precision(.fractionLength(4)))
         
     }
 
@@ -162,11 +162,18 @@ struct AccelerationCalculatorView: View {
                         Text("Acceleration:")
                             .font(.title2)
                             .bold()
+                            .foregroundColor(.white)
                         LaTeX("\(formattedAccelerationValue) $$m/s^2$$")
                             .blockMode(.alwaysInline)
                             .font(.title3)
+                            .bold()
+                            .foregroundColor(.white)
                     }
+                    .padding()
+                    .background(Color.blue)
                 }
+                
+                Spacer()
                 
                 //Button to save work
                 Button(action: {
@@ -188,7 +195,7 @@ struct AccelerationCalculatorView: View {
                Spacer()
                 
             }
-            .padding()
+            
             .padding()
             .navigationTitle("Acceleration")
         }
