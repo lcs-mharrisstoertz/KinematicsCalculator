@@ -23,10 +23,17 @@ struct HistoryView: View {
                 List{
                     ForEach(savedAnswers.results){currentAnswer in
                         VStack{
+                            //Show input
                             Text("Input Provided:")
                                 .bold()
-                            Text("Intial Velocity: \(currentAnswer.providedInitialVelocity) Final Velocity:  \(currentAnswer.providedFinalVelocity) Distance: \(currentAnswer.providedDistance)")
+                            Text("Intial Velocity: \(currentAnswer.providedInitialVelocity)")
+                            Text("Final Velocity:  \(currentAnswer.providedFinalVelocity)")
+                            Text("Distance: \(currentAnswer.providedDistance)")
+                            
+                            //Show answer
                             Text("Answer: \(currentAnswer.answer)")
+                                .bold()
+                                .font(.title3)
                         }
                         
                     }
