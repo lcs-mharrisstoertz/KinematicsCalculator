@@ -9,39 +9,43 @@ import SwiftUI
 
 struct PropertyToSolveView: View {
     var body: some View {
-        VStack{
-            Text("Select Property To Solve For")
-                .font(.title)
-                .bold()
-            List{
-                NavigationLink(destination: {
-                    UnknownPropertyListView()
-                }, label: {
-                    TitleSymbolView(title: "Distance", symbol: "Δx")
-                })
-                NavigationLink(destination: {
-                    UnknownPropertyListView()
-                }, label: {
-                    TitleSymbolView(title: "Acceleration", symbol: "a")
-                })
-                NavigationLink(destination: {
-                    UnknownPropertyListView()
-                }, label: {
-                    TitleSymbolView(title: "Time", symbol: "t")
-                })
-                NavigationLink(destination: {
-                    UnknownPropertyListView()
-                }, label: {
-                    TitleSymbolView(title: "Initial Velocity", symbol: "V0")
-                })
-                NavigationLink(destination: {
-                    UnknownPropertyListView()
-                }, label: {
-                    TitleSymbolView(title: "Final Velocity", symbol: "V")
-                })
-               
+        
+        NavigationView{
+            VStack{
+                Text("Select Property To Solve For")
+                    .font(.title)
+                    .bold()
+                List{
+                    NavigationLink(destination: {
+                        UnknownPropertyListView()
+                    }, label: {
+                        TitleSymbolView(title: "Distance", symbol: "Δx")
+                    })
+                    NavigationLink(destination: {
+                        UnknownPropertyListView()
+                    }, label: {
+                        TitleSymbolView(title: "Acceleration", symbol: "a")
+                    })
+                    NavigationLink(destination: {
+                        UnknownPropertyListView()
+                    }, label: {
+                        TitleSymbolView(title: "Time", symbol: "t")
+                    })
+                    NavigationLink(destination: {
+                        UnknownPropertyListView()
+                    }, label: {
+                        TitleSymbolView(title: "Initial Velocity", symbol: "V0")
+                    })
+                    NavigationLink(destination: {
+                        UnknownPropertyListView()
+                    }, label: {
+                        TitleSymbolView(title: "Final Velocity", symbol: "V")
+                    })
+                   
+                }
             }
         }
+       
        
        
         .navigationTitle("Select Property To Solve")

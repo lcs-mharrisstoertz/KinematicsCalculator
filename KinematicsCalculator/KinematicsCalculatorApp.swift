@@ -11,7 +11,6 @@ import SwiftUI
 struct KinematicsCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView{
                 TabView{
                     PropertyToSolveView()
                         .tabItem{
@@ -23,7 +22,6 @@ struct KinematicsCalculatorApp: App {
                         }
                 }
                 .environment(\.blackbirdDatabase, AppDatabase.instance)
-            }
         }
     }
 }
