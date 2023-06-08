@@ -41,11 +41,8 @@ struct PropertyToSolveView: View {
                    
                 }
             }
+            .navigationTitle("Select Property To Solve")
         }
-       
-       
-       
-        .navigationTitle("Select Property To Solve")
     }
 }
 
