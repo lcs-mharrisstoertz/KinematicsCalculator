@@ -12,9 +12,6 @@ struct PropertyToSolveView: View {
         
         NavigationView{
             VStack{
-                Text("Select Property To Solve For")
-                    .font(.title)
-                    .bold()
                 List{
                     NavigationLink(destination: {
                         UnknownPropertyListView()
