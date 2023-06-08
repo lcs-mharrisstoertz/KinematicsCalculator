@@ -11,5 +11,8 @@ import Foundation
 struct Answer: BlackbirdModel {
     @BlackbirdColumn var id: Int
     @BlackbirdColumn var answer: Double
+    @BlackbirdColumn var providedInitialVelocity: Double
+    @BlackbirdColumn var providedFinalVelocity: Double
+    @BlackbirdColumn var providedDistance: Double
 }
 

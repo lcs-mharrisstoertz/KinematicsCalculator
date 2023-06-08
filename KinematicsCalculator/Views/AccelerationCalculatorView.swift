@@ -179,7 +179,7 @@ struct AccelerationCalculatorView: View {
                 Task{
                     //write to the data base
                     try await db!.transaction { core in
-                        try core.query("INSERT INTO Answer (answer) VALUES (?)", formattedAccelerationValue)
+                        try core.query("INSERT INTO Answer (answer,providedInitialVelocity, providedFinalVelocity, providedDistance) VALUES (?, ?, ?, ?)", formattedAccelerationValue, initialVelocityString, finalVelocityString, distanceString)
                     }
                 }
             }, label: {

@@ -22,7 +22,12 @@ struct HistoryView: View {
             VStack {
                 List{
                     ForEach(savedAnswers.results){currentAnswer in
-                        Text("Answer: \(currentAnswer.answer)")
+                        VStack{
+                            Text("Input Provided:")
+                                .bold()
+                            Text("Intial Velocity: \(currentAnswer.providedInitialVelocity) Final Velocity:  \(currentAnswer.providedFinalVelocity) Distance: \(currentAnswer.providedDistance)")
+                            Text("Answer: \(currentAnswer.answer)")
+                        }
                         
                     }
                     .onDelete(perform: removeRows)
