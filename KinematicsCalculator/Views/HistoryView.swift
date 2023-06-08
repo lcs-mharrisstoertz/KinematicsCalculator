@@ -22,7 +22,7 @@ struct HistoryView: View {
             VStack {
                 List{
                     ForEach(savedAnswers.results){currentAnswer in
-                        VStack{
+                        VStack(alignment: .leading){
                             //Show input
                             Text("Input Provided:")
                                 .bold()
