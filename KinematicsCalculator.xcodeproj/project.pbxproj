@@ -20,6 +20,7 @@
 		CCA731412A3153F000956812 /* UnknownPropertyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA731402A3153F000956812 /* UnknownPropertyListView.swift */; };
 		CCA731432A31547900956812 /* TitleSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA731422A31547900956812 /* TitleSymbolView.swift */; };
 		CCA731452A31602900956812 /* PropertyToSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA731442A31602900956812 /* PropertyToSolveView.swift */; };
+		CCA731472A338B9000956812 /* HistoryAbstractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA731462A338B9000956812 /* HistoryAbstractionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CCA731402A3153F000956812 /* UnknownPropertyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownPropertyListView.swift; sourceTree = "<group>"; };
 		CCA731422A31547900956812 /* TitleSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSymbolView.swift; sourceTree = "<group>"; };
 		CCA731442A31602900956812 /* PropertyToSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyToSolveView.swift; sourceTree = "<group>"; };
+		CCA731462A338B9000956812 /* HistoryAbstractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAbstractionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +92,11 @@
 		CC78A5992A2E3C1B00140A3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CCA731422A31547900956812 /* TitleSymbolView.swift */,
+				CCA731462A338B9000956812 /* HistoryAbstractionView.swift */,
 				CC78A59A2A2E3C5A00140A3F /* AccelerationCalculatorView.swift */,
 				CCA7313E2A2FBBE300956812 /* HistoryView.swift */,
 				CCA731402A3153F000956812 /* UnknownPropertyListView.swift */,
-				CCA731422A31547900956812 /* TitleSymbolView.swift */,
 				CCA731442A31602900956812 /* PropertyToSolveView.swift */,
 			);
 			path = Views;
@@ -198,6 +201,7 @@
 				CCA731452A31602900956812 /* PropertyToSolveView.swift in Sources */,
 				CC78A59E2A2E52E500140A3F /* Answer.swift in Sources */,
 				CC78A59B2A2E3C5A00140A3F /* AccelerationCalculatorView.swift in Sources */,
+				CCA731472A338B9000956812 /* HistoryAbstractionView.swift in Sources */,
 				CCA731412A3153F000956812 /* UnknownPropertyListView.swift in Sources */,
 				CCA731432A31547900956812 /* TitleSymbolView.swift in Sources */,
 				CCA7313F2A2FBBE300956812 /* HistoryView.swift in Sources */,
